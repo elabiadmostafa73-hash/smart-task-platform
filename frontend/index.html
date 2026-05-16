@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Task Platform</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="background-glow"></div>
+
+    <!-- AUTH -->
+
+    <div class="auth-container" id="authContainer">
+
+        <div class="auth-box">
+
+            <h1>Smart Task</h1>
+
+            <p class="subtitle">
+                CLOUD AUTOMATION PLATFORM
+            </p>
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Username"
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Email"
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+            >
+
+            <div class="auth-buttons">
+
+                <button onclick="register()">
+                    Register
+                </button>
+
+                <button onclick="login()">
+                    Login
+                </button>
+
+            </div>
+
+            <p id="authMessage"></p>
+
+        </div>
+
+    </div>
+
+    <!-- DASHBOARD -->
+
+    <div class="container hidden" id="dashboard">
+
+        <!-- LEFT SIDE -->
+
+        <div class="left-side">
+
+            <span class="tag">
+                CLOUD AUTOMATION
+            </span>
+
+            <h1>
+                Smart Task
+                <br>
+                Platform
+            </h1>
+
+            <p class="description">
+
+                Secure DevOps task management platform
+                with role based access control.
+
+            </p>
+
+            <div class="user-card">
+
+                <h3 id="userName">
+                    User
+                </h3>
+
+                <p id="userRole">
+                    client
+                </p>
+
+            </div>
+
+            <button
+                class="logout-btn"
+                onclick="logout()"
+            >
+                Logout
+            </button>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+
+        <div class="right-side">
+
+            <!-- ADMIN PANEL -->
+
+            <div id="adminPanel" class="hidden">
+
+                <h2>
+                    Admin Dashboard
+                </h2>
+
+                <div class="task-box">
+
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="Task title..."
+                    >
+
+                    <input
+                        type="text"
+                        id="assignedTo"
+                        placeholder="Assign username"
+                    >
+
+                    <button onclick="createTask()">
+                        Assign
+                    </button>
+
+                </div>
+
+                <ul id="adminTaskList"></ul>
+
+            </div>
+
+            <!-- CLIENT PANEL -->
+
+            <div id="clientPanel" class="hidden">
+
+                <h2>
+                    My Tasks
+                </h2>
+
+                <ul id="taskList"></ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
